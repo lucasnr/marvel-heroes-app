@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Header from './Header';
-import { Container, Welcome, Greetings, Title } from './styles';
+import Category from './Category';
+import { Container, Welcome, Greetings, Title, Categories } from './styles';
 
 const HomeScreen: React.FC = () => {
 	return (
@@ -11,6 +12,13 @@ const HomeScreen: React.FC = () => {
 				<Greetings>Bem-vindo ao Marvel Heroes</Greetings>
 				<Title>Escolha o seu personagem</Title>
 			</Welcome>
+			<Categories>
+				<Category name="hero" />
+				<Category name="villain" />
+				<Category name="antihero" />
+				<Category name="alien" />
+				<Category name="human" />
+			</Categories>
 		</Container>
 	);
 };

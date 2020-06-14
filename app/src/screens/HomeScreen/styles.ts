@@ -22,3 +22,10 @@ export const Title = styled.Text`
 	font-family: 'Gilroy-Heavy';
 	font-size: 32px;
 `;
+
+export const Categories = styled.View`
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 48px;
+	padding: 0px 24px;
+`;
