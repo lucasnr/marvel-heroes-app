@@ -12,5 +12,7 @@
 		"paths": {
 			"~/*": ["*"]
 		}
-	}
+	},
+	"include": ["src"],
+	"files": ["src/styles/styled.d.ts"]
 }
