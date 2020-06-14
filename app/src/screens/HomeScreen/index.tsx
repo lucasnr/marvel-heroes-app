@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Container, Title } from './styles';
+import Header from './Header';
+import { Container } from './styles';
 
 const HomeScreen: React.FC = () => {
 	return (
 		<Container>
-			<Title>Goodbye World{'\n'}from HomeScreen</Title>
+			<Header />
 		</Container>
 	);
 };
