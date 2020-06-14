@@ -5,6 +5,7 @@ declare module 'styled-components' {
 		title: string;
 		text: {
 			primary: string;
+			secondary: string;
 		};
 	}
 }
