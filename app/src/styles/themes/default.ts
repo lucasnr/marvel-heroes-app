@@ -6,6 +6,9 @@ const theme: DefaultTheme = {
 		primary: '#333',
 		secondary: '#B7B7C8',
 	},
+	colors: {
+		primary: '#F2264B',
+	},
 };
 
 export default theme;

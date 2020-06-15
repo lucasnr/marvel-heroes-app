@@ -6,6 +6,14 @@ export const Container = styled.SafeAreaView`
 	padding-top: ${StatusBar.currentHeight || 0}px;
 `;
 
+export const ScrollContainer = styled.ScrollView.attrs({
+	contentContainerStyle: {
+		paddingVertical: 24,
+	},
+})`
+	flex: 1;
+`;
+
 export const Welcome = styled.View`
 	margin-bottom: 32px;
 	padding: 0px 24px;
