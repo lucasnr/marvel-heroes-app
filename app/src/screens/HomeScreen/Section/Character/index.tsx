@@ -1,43 +1,24 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import { Wrapper, Container, AlterEgo, Name } from './styles';
 
+import { ICharacter } from '~/types';
 import findImage from '~/utils/findImage';
 
-export interface ICharacter {
-	name: string;
-	alterEgo: string;
-	imagePath: string;
-	biography: string;
-	caracteristics: {
-		birth: string;
-		weight: {
-			value: number;
-			unity: string;
-		};
-		height: {
-			value: number;
-			unity: string;
-		};
-		universe: string;
-	};
-	abilities: {
-		force: number;
-		intelligence: number;
-		agility: number;
-		endurance: number;
-		velocity: number;
-	};
-	movies: string[];
-}
-
-const Character: React.FC<ICharacter> = ({ name, alterEgo, imagePath }) => {
+const Character: React.FC<ICharacter> = (props) => {
+	const { name, alterEgo, imagePath } = props;
 	const image = useMemo(() => findImage(imagePath), []);
 
+	const navigation = useNavigation();
+	const handlePress = useCallback(() => {
+		navigation.navigate('Details', { ...props });
+	}, [navigation, props]);
+
 	return (
-		<TouchableOpacity activeOpacity={0.7}>
+		<TouchableOpacity onPress={handlePress} activeOpacity={0.7}>
 			<Wrapper source={image}>
 				<LinearGradient
 					colors={['transparent', 'rgba(0,0,0, .75)']}

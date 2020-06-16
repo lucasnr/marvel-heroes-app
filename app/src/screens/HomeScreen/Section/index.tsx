@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import Character from './Character';
 import { Container, Header, Label, SeeAll, Characters } from './styles';
 
-import { ICharacter } from './Character';
+import { ICharacter } from '~/types';
 
 interface Props {
 	label: string;
