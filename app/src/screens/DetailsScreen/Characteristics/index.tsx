@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 
+import Icon from '~/components/Icon';
 import { Container, Item, Value } from './styles';
 
 import { ICharacterCharacteristics as ICharacteristics } from '~/types';
@@ -16,7 +17,6 @@ const Characteristics: React.FC<ICharacteristics> = ({
 	universe,
 }) => {
 	const iconSize = 24;
-	const fillColor = 'rgba(255, 255, 255, .6)';
 
 	const age = useMemo(() => {
 		return new window.Date().getFullYear() - Number(birth);
@@ -25,12 +25,22 @@ const Characteristics: React.FC<ICharacteristics> = ({
 	return (
 		<Container>
 			<Item>
-				<Age width={iconSize} height={iconSize} fill={fillColor} />
+				<Icon
+					component={Age}
+					alt="Ícone de idade"
+					width={iconSize}
+					height={iconSize}
+				/>
 				<Value>{age} anos</Value>
 			</Item>
 
 			<Item>
-				<Weight width={iconSize} height={iconSize} fill={fillColor} />
+				<Icon
+					component={Weight}
+					alt="Ícone de peso"
+					width={iconSize}
+					height={iconSize}
+				/>
 				<Value>
 					{weight.value}
 					{weight.unity}
@@ -38,7 +48,12 @@ const Characteristics: React.FC<ICharacteristics> = ({
 			</Item>
 
 			<Item>
-				<Height width={iconSize} height={iconSize} fill={fillColor} />
+				<Icon
+					component={Height}
+					alt="Ícone de altura"
+					width={iconSize}
+					height={iconSize}
+				/>
 				<Value>
 					{height.value}
 					{height.unity}
@@ -46,7 +61,12 @@ const Characteristics: React.FC<ICharacteristics> = ({
 			</Item>
 
 			<Item>
-				<Universe width={iconSize} height={iconSize} fill={fillColor} />
+				<Icon
+					component={Universe}
+					alt="Ícone de universo"
+					width={iconSize}
+					height={iconSize}
+				/>
 				<Value>{universe}</Value>
 			</Item>
 		</Container>

@@ -1,6 +1,6 @@
 {
 	"expo": {
-		"name": "marvel-heroes-app",
+		"name": "Marvel Heroes",
 		"slug": "marvel-heroes-app",
 		"platforms": ["ios", "android", "web"],
 		"version": "1.0.0",

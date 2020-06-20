@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SvgProps } from 'react-native-svg';
 
+import Icon from '~/components/Icon';
 import { Container } from './styles';
 
 import Hero from '~/assets/icons/hero.svg';
@@ -48,11 +49,16 @@ interface Props {
 }
 
 const Category: React.FC<Props> = ({ name }) => {
-	const { from, to, icon: Icon } = options[name];
+	const { from, to, icon: OptionIcon } = options[name];
 
 	return (
 		<Container>
-			<Icon fill="#fff" width={32} height={32} />
+			<Icon
+				component={OptionIcon}
+				alt="Ícone da categoria"
+				width={32}
+				height={32}
+			/>
 			<LinearGradient colors={[from, to]} style={styles.gradient} />
 		</Container>
 	);

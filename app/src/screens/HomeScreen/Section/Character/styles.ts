@@ -11,6 +11,7 @@ export const Wrapper = styled.ImageBackground`
 
 export const Container = styled.View`
 	padding: 12px;
+	z-index: 25;
 `;
 
 export const AlterEgo = styled.Text`
