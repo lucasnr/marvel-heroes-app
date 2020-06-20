@@ -33,6 +33,7 @@
     "@types/styled-components": "^5.1.0",
     "babel-plugin-root-import": "^6.5.0",
     "babel-preset-expo": "^8.2.1",
+    "expo-cli": "^3.21.9",
     "typescript": "~3.8.3"
   },
   "private": true,
