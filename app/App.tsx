@@ -1,10 +1,11 @@
 import React from 'react';
+import { View, Platform } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import { AppLoading } from 'expo';
 import { useFonts } from '@use-expo/font';
 
-import defaultTheme from '~/styles/themes/default';
-import Routes from '~/routes';
+import defaultTheme from './src/styles/themes/default';
+import Routes from './src/routes';
 
 export default function () {
 	let [fontsLoaded] = useFonts({
@@ -20,8 +21,27 @@ export default function () {
 
 const App: React.FC = () => {
 	return (
-		<ThemeProvider theme={defaultTheme}>
-			<Routes />
-		</ThemeProvider>
+		<Container>
+			<ThemeProvider theme={defaultTheme}>
+				<Routes />
+			</ThemeProvider>
+		</Container>
+	);
+};
+
+const Container: React.FC = ({ children }) => {
+	return Platform.OS === 'web' ? (
+		<View
+			style={{
+				flex: 1,
+				marginHorizontal: 'auto',
+				maxWidth: 400,
+				width: '100%',
+			}}
+		>
+			{children}
+		</View>
+	) : (
+		<>{children}</>
 	);
 };

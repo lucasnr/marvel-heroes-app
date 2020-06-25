@@ -41,7 +41,7 @@ const DetailsScreen: React.FC = () => {
 			<Container>
 				<Header />
 
-				<ScrollContainer>
+				<ScrollContainer showsVerticalScrollIndicator={false}>
 					<Image source={image} />
 					<LinearGradient
 						colors={['transparent', 'transparent', 'rgba(0,0,0, .75)', '#000']}
